@@ -1,4 +1,4 @@
-package com.demo.fab.walletsystem;
+package com.demo.fab.walletsystem.exceptionhelper;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
