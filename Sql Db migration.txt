@@ -1,0 +1,5 @@
+create table user(userId INT(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,username VARCHAR(20) UNIQUE NOT NULL,password VARCHAR(10) NOT NULL,fullname VARCHAR(40) NOT NULL,city VARCHAR(10) NOT NULL,address VARCHAR(60) NOT NULL,email VARCHAR(30) NOT NULL,mobilenumber VARCHAR(10) NOT NULL,account_number VARCHAR(40) NOT NULL,bankcardtype VARCHAR(10) NOT NULL,bankcardnumber VARCHAR(30) NOT NULL,pancard VARCHAR(25) NOT NULL,gender VARCHAR(6) NOT NULL,created_at TIMESTAMP NOT NULL,lastUpdatedAt TIMESTAMP NOT NULL);
+
+create table wallet(walletId INT(255) PRIMARY KEY NOT NULL, totalWalletAmount DECIMAL(10,2) NOT NULL, updated_at TIMESTAMP NOT NULL,created_at TIMESTAMP NOT NULL);
+
+create table transactions(txnId VARCHAR(50) NOT NULL,txnreference VARCHAR(20) PRIMARY KEY NOT NULL,amount VARCHAR(10),txntype VARCHAR(10),closingWalletAmount DECIMAL(10,2),processed_date_time TIMESTAMP);
