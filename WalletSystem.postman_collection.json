@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "d82d5242-babc-440d-8873-ec4e30bf764b",
+		"name": "WalletSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/v1/api/wallet/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userName\":\"rancho\",\r\n\"password\":\"Rancho44\",\r\n\"fullName\":\"Ranjan mishra\",\r\n\"city\":\"Pune\",\r\n\"address\":\"Plot 8 Hinjewadi Phase 1\",\r\n\"emailId\":\"meetrancho@yahoo.com\",\r\n\"mobileNumber\":\"8975364901\",\r\n\"accountNumber\":\"116349689023\",\r\n\"bankCardType\":\"Debit\",\r\n\"bankCardNumber\":\"4113987607983467\",\r\n\"panCard\":\"EMFPP7950B\",\r\n\"gender\":\"Male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/wallet/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"wallet",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/api/wallet/updateprofile/brutus",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Kill4brutus",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "brutus",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userName\":\"brutus\",\r\n\"password\":\"Kill4brutus\",\r\n\"fullName\":\"Kartik Patel\",\r\n\"city\":\"Pune\",\r\n\"address\":\"Plot 8 Hinjewadi Phase 1\",\r\n\"emailId\":\"meetkartik@gmail.com\",\r\n\"mobileNumber\":\"9685256680\",\r\n\"accountNumber\":\"116349689023\",\r\n\"bankCardType\":\"Credit\",\r\n\"bankCardNumber\":\"4113987607983467\",\r\n\"panCard\":\"EMFPP7950B\",\r\n\"gender\":\"Male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/wallet/updateprofile/brutus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"wallet",
+						"updateprofile",
+						"brutus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/api/wallet/viewprofile/brutus",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "brutus",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Kill4brutus",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/wallet/viewprofile/brutus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"wallet",
+						"viewprofile",
+						"brutus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/api/wallet/sendmoney/rancho/brutus/50.5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/wallet/sendmoney/rancho/brutus/50.5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"wallet",
+						"sendmoney",
+						"rancho",
+						"brutus",
+						"50.5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/api/wallet/viewpassbook/brutus",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Kill4brutus",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "brutus",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/wallet/viewpassbook/brutus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"wallet",
+						"viewpassbook",
+						"brutus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/api/wallet/addmoney/rancho/100",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Kill4brutus",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "brutus",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/wallet/addmoney/rancho/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"wallet",
+						"addmoney",
+						"rancho",
+						"100"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
