@@ -19,7 +19,7 @@ public class ExceptionHandlerClass {
 	
 	@ExceptionHandler( {UserAlreadyExistsException.class})
 	    public ResponseEntity<Object> handleUserAlreadyExistsException(UserAlreadyExistsException ex) {
-	        return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.BAD_REQUEST);
+	        return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.CONFLICT);
 	    }
 	
 	@ExceptionHandler( {WalletException.class})
@@ -34,7 +34,7 @@ public class ExceptionHandlerClass {
 	
 	@ExceptionHandler( {UserProfileUpdateException.class})
     public ResponseEntity<Object> handleUserProfileUpdateException(UserProfileUpdateException ex) {
-        return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 	
 	@ExceptionHandler( {TransactionCreationException.class})
@@ -44,16 +44,16 @@ public class ExceptionHandlerClass {
 	
 	@ExceptionHandler( {UserProfileNotFoundException.class})
     public ResponseEntity<Object> handleUserProfileNotFoundException(UserProfileNotFoundException ex) {
-        return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.NOT_FOUND);
     }
 	
 	@ExceptionHandler( {UserProfileViewException.class})
     public ResponseEntity<Object> handleUserProfileViewException(UserProfileViewException ex) {
-        return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 	
 	@ExceptionHandler( {UserPassbookViewException.class})
     public ResponseEntity<Object> handleUserPassbookViewException(UserPassbookViewException ex) {
-        return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
