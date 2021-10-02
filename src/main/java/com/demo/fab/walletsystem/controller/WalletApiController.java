@@ -23,24 +23,27 @@ import com.demo.fab.walletsystem.service.UserProfileService;
 import com.demo.fab.walletsystem.service.WalletAddMoneyService;
 import com.demo.fab.walletsystem.service.WalletSendMoneyService;
 
-@RestController(value = "/v1/api/wallet")
+@RestController
 public class WalletApiController {
 	private Logger logger =LoggerFactory.getLogger(WalletApiController.class);
 	
-	@Autowired
 	private SignUpService signUpService;
-	
-	@Autowired
 	private UserProfileService userProfileService;
-	
-	@Autowired
 	private WalletAddMoneyService walletAddMoneyService;
-	
-	@Autowired
 	private WalletSendMoneyService walletSendMoneyService;
-	
-	@Autowired
 	private TransactionService transactionService;
+
+	@Autowired
+	public WalletApiController(SignUpService signUpService, UserProfileService userProfileService,
+			WalletAddMoneyService walletAddMoneyService, WalletSendMoneyService walletSendMoneyService,
+			TransactionService transactionService) {
+		super();
+		this.signUpService = signUpService;
+		this.userProfileService = userProfileService;
+		this.walletAddMoneyService = walletAddMoneyService;
+		this.walletSendMoneyService = walletSendMoneyService;
+		this.transactionService = transactionService;
+	}
 
 	@PostMapping(value="/signup" ,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> signUp(@RequestBody User signUpData)
@@ -64,10 +67,11 @@ public class WalletApiController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
     }
 	
-	@GetMapping(value = "/addmoney/{username}/{money}")
-	public void addMoney(@PathVariable(value = "username")String username,@PathVariable(value = "money") Float amount)
+	@PostMapping(value = "/addmoney/{username}/{money}")
+	public ResponseEntity<String> addMoney(@PathVariable(value = "username")String username,@PathVariable(value = "money") Float amount)
 	{
 		walletAddMoneyService.addmoney(amount, username);
+		return new ResponseEntity<String>("Success", HttpStatus.OK);
 	}
 	
 	@PostMapping(value = "/sendmoney/{fromusername}/{tousername}/{money}")
