@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.fab.walletsystem.exceptions.UserAlreadyExistsException;
 import com.demo.fab.walletsystem.model.Transactions;
 import com.demo.fab.walletsystem.model.User;
 import com.demo.fab.walletsystem.service.SignUpService;
@@ -24,7 +23,7 @@ import com.demo.fab.walletsystem.service.UserProfileService;
 import com.demo.fab.walletsystem.service.WalletAddMoneyService;
 import com.demo.fab.walletsystem.service.WalletSendMoneyService;
 
-@RestController
+@RestController(value = "/v1/api/wallet")
 public class WalletApiController {
 	private Logger logger =LoggerFactory.getLogger(WalletApiController.class);
 	
